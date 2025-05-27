@@ -1,30 +1,55 @@
-# Video Call SDK
+# SDK для реализации видеозвонков с использованием WebRTC и Mediasoup
 
-Проект для реализации видеозвонков с использованием WebRTC и Mediasoup.
+**Сервер:** Node.js + WebSocket, обёрнутый в Docker
+**Фронт:** Vite + TypeScript + React + MobX
 
-Сервер: Node.js + WebSocket, обёрнутый в Docker.
+## 1. Запуск сервера через Docker
 
-Фронт: Vite + TypeScript + React + Mobx
+Перейти в папку сервера:
 
-1. Запуск сервера через Docker
+```bash
+cd src/server
+```
 
+Собрать Docker-образ:
 
-    Переходим в папку сервера: cd src/server
-    Сборка Docker-образа: docker build -t video-call-server .
-    Запуск контейнера: docker run -p 3000:3000 --name video-call-server video-call-server
+```bash
+docker build -t video-call-server .
+```
 
-После этого сервер будет доступен по адресу ws://localhost:3000
+Запустить контейнер:
 
-2. Запуск фронтенда
+```bash
+docker run -p 3000:3000 --name video-call-server video-call-server
+```
 
+После этого сервер будет доступен по адресу:
 
-    Установка зависимостей: npm install
-    Запуск Vite-сервера: npm run dev
+```
+ws://localhost:3000
+```
 
-По умолчанию фронт откроется на http://localhost:5173
+## 2. Запуск фронтенда
 
-Как протестировать видеозвонок:
+Установка зависимостей:
 
-Открыть 2 вкладки и нажать кнопку входа в обеих вкладках.
+```bash
+npm install
+```
 
-Видеозвонок установится между вкладками.
+Запуск Vite-сервера:
+
+```bash
+npm run dev
+```
+
+По умолчанию фронт откроется по адресу:
+
+```
+http://localhost:5173
+```
+
+## Как протестировать видеозвонок
+
+Открыть две вкладки браузера и нажать кнопку входа в обеих вкладках.
+Видеозвонок установится между ними.
