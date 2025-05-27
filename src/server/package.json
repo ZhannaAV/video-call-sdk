@@ -1,0 +1,13 @@
+{
+  "name": "video-call-server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "mediasoup": "^3.15.8",
+    "ws": "^8.0.0"
+  }
+}
